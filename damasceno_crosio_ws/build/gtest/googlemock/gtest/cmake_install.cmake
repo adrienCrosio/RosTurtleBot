@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cpe_student/Bureau/damasceno_crosio_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

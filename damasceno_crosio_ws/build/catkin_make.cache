@@ -1,2 +1,2 @@
-kobuki_msgs
--DCATKIN_DEVEL_PREFIX=/home/cpe_student/Bureau/damasceno_crosio_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cpe_student/Bureau/damasceno_crosio_ws/install -G Unix Makefiles
+collision:kobuki_msgs
+-DCATKIN_DEVEL_PREFIX=/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/devel -DCMAKE_INSTALL_PREFIX=/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/install -G Unix Makefiles

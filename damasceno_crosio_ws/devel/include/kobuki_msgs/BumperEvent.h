@@ -43,6 +43,23 @@ struct BumperEvent_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(LEFT)
+  #undef LEFT
+#endif
+#if defined(_WIN32) && defined(CENTER)
+  #undef CENTER
+#endif
+#if defined(_WIN32) && defined(RIGHT)
+  #undef RIGHT
+#endif
+#if defined(_WIN32) && defined(RELEASED)
+  #undef RELEASED
+#endif
+#if defined(_WIN32) && defined(PRESSED)
+  #undef PRESSED
+#endif
+
   enum {
     LEFT = 0u,
     CENTER = 1u,
@@ -83,6 +100,21 @@ ros::message_operations::Printer< ::kobuki_msgs::BumperEvent_<ContainerAllocator
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::kobuki_msgs::BumperEvent_<ContainerAllocator1> & lhs, const ::kobuki_msgs::BumperEvent_<ContainerAllocator2> & rhs)
+{
+  return lhs.bumper == rhs.bumper &&
+    lhs.state == rhs.state;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::kobuki_msgs::BumperEvent_<ContainerAllocator1> & lhs, const ::kobuki_msgs::BumperEvent_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace kobuki_msgs
 
 namespace ros
@@ -90,12 +122,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'kobuki_msgs': ['/home/cpe_student/Bureau/damasceno_crosio_ws/src/kobuki_msgs/msg', '/home/cpe_student/Bureau/damasceno_crosio_ws/devel/share/kobuki_msgs/msg'], 'actionlib_msgs': ['/opt/ros/melodic/share/actionlib_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

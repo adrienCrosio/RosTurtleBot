@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/cpe_student/Bureau/damasceno_crosio_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/cpe_student/Bureau/damasceno_crosio_ws/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

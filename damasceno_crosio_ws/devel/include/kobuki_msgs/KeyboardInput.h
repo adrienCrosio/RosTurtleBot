@@ -38,6 +38,29 @@ struct KeyboardInput_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(KeyCode_Right)
+  #undef KeyCode_Right
+#endif
+#if defined(_WIN32) && defined(KeyCode_Left)
+  #undef KeyCode_Left
+#endif
+#if defined(_WIN32) && defined(KeyCode_Up)
+  #undef KeyCode_Up
+#endif
+#if defined(_WIN32) && defined(KeyCode_Down)
+  #undef KeyCode_Down
+#endif
+#if defined(_WIN32) && defined(KeyCode_Space)
+  #undef KeyCode_Space
+#endif
+#if defined(_WIN32) && defined(KeyCode_Enable)
+  #undef KeyCode_Enable
+#endif
+#if defined(_WIN32) && defined(KeyCode_Disable)
+  #undef KeyCode_Disable
+#endif
+
   enum {
     KeyCode_Right = 67u,
     KeyCode_Left = 68u,
@@ -84,6 +107,20 @@ ros::message_operations::Printer< ::kobuki_msgs::KeyboardInput_<ContainerAllocat
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::kobuki_msgs::KeyboardInput_<ContainerAllocator1> & lhs, const ::kobuki_msgs::KeyboardInput_<ContainerAllocator2> & rhs)
+{
+  return lhs.pressedKey == rhs.pressedKey;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::kobuki_msgs::KeyboardInput_<ContainerAllocator1> & lhs, const ::kobuki_msgs::KeyboardInput_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace kobuki_msgs
 
 namespace ros
@@ -91,12 +128,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'kobuki_msgs': ['/home/cpe_student/Bureau/damasceno_crosio_ws/src/kobuki_msgs/msg', '/home/cpe_student/Bureau/damasceno_crosio_ws/devel/share/kobuki_msgs/msg'], 'actionlib_msgs': ['/opt/ros/melodic/share/actionlib_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

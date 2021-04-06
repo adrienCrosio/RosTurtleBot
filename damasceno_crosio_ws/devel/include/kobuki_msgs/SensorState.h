@@ -119,6 +119,80 @@ struct SensorState_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(BUMPER_RIGHT)
+  #undef BUMPER_RIGHT
+#endif
+#if defined(_WIN32) && defined(BUMPER_CENTRE)
+  #undef BUMPER_CENTRE
+#endif
+#if defined(_WIN32) && defined(BUMPER_LEFT)
+  #undef BUMPER_LEFT
+#endif
+#if defined(_WIN32) && defined(WHEEL_DROP_RIGHT)
+  #undef WHEEL_DROP_RIGHT
+#endif
+#if defined(_WIN32) && defined(WHEEL_DROP_LEFT)
+  #undef WHEEL_DROP_LEFT
+#endif
+#if defined(_WIN32) && defined(CLIFF_RIGHT)
+  #undef CLIFF_RIGHT
+#endif
+#if defined(_WIN32) && defined(CLIFF_CENTRE)
+  #undef CLIFF_CENTRE
+#endif
+#if defined(_WIN32) && defined(CLIFF_LEFT)
+  #undef CLIFF_LEFT
+#endif
+#if defined(_WIN32) && defined(BUTTON0)
+  #undef BUTTON0
+#endif
+#if defined(_WIN32) && defined(BUTTON1)
+  #undef BUTTON1
+#endif
+#if defined(_WIN32) && defined(BUTTON2)
+  #undef BUTTON2
+#endif
+#if defined(_WIN32) && defined(DISCHARGING)
+  #undef DISCHARGING
+#endif
+#if defined(_WIN32) && defined(DOCKING_CHARGED)
+  #undef DOCKING_CHARGED
+#endif
+#if defined(_WIN32) && defined(DOCKING_CHARGING)
+  #undef DOCKING_CHARGING
+#endif
+#if defined(_WIN32) && defined(ADAPTER_CHARGED)
+  #undef ADAPTER_CHARGED
+#endif
+#if defined(_WIN32) && defined(ADAPTER_CHARGING)
+  #undef ADAPTER_CHARGING
+#endif
+#if defined(_WIN32) && defined(OVER_CURRENT_LEFT_WHEEL)
+  #undef OVER_CURRENT_LEFT_WHEEL
+#endif
+#if defined(_WIN32) && defined(OVER_CURRENT_RIGHT_WHEEL)
+  #undef OVER_CURRENT_RIGHT_WHEEL
+#endif
+#if defined(_WIN32) && defined(OVER_CURRENT_BOTH_WHEELS)
+  #undef OVER_CURRENT_BOTH_WHEELS
+#endif
+#if defined(_WIN32) && defined(DIGITAL_INPUT0)
+  #undef DIGITAL_INPUT0
+#endif
+#if defined(_WIN32) && defined(DIGITAL_INPUT1)
+  #undef DIGITAL_INPUT1
+#endif
+#if defined(_WIN32) && defined(DIGITAL_INPUT2)
+  #undef DIGITAL_INPUT2
+#endif
+#if defined(_WIN32) && defined(DIGITAL_INPUT3)
+  #undef DIGITAL_INPUT3
+#endif
+#if defined(_WIN32) && defined(DB25_TEST_BOARD_CONNECTED)
+  #undef DB25_TEST_BOARD_CONNECTED
+#endif
+
   enum {
     BUMPER_RIGHT = 1u,
     BUMPER_CENTRE = 2u,
@@ -216,6 +290,36 @@ ros::message_operations::Printer< ::kobuki_msgs::SensorState_<ContainerAllocator
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::kobuki_msgs::SensorState_<ContainerAllocator1> & lhs, const ::kobuki_msgs::SensorState_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.time_stamp == rhs.time_stamp &&
+    lhs.bumper == rhs.bumper &&
+    lhs.wheel_drop == rhs.wheel_drop &&
+    lhs.cliff == rhs.cliff &&
+    lhs.left_encoder == rhs.left_encoder &&
+    lhs.right_encoder == rhs.right_encoder &&
+    lhs.left_pwm == rhs.left_pwm &&
+    lhs.right_pwm == rhs.right_pwm &&
+    lhs.buttons == rhs.buttons &&
+    lhs.charger == rhs.charger &&
+    lhs.battery == rhs.battery &&
+    lhs.bottom == rhs.bottom &&
+    lhs.current == rhs.current &&
+    lhs.over_current == rhs.over_current &&
+    lhs.digital_input == rhs.digital_input &&
+    lhs.analog_input == rhs.analog_input;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::kobuki_msgs::SensorState_<ContainerAllocator1> & lhs, const ::kobuki_msgs::SensorState_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace kobuki_msgs
 
 namespace ros
@@ -223,12 +327,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'kobuki_msgs': ['/home/cpe_student/Bureau/damasceno_crosio_ws/src/kobuki_msgs/msg', '/home/cpe_student/Bureau/damasceno_crosio_ws/devel/share/kobuki_msgs/msg'], 'actionlib_msgs': ['/opt/ros/melodic/share/actionlib_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

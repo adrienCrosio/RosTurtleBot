@@ -1,0 +1,8 @@
+prefix=/home/adrien/Bureau/Framework ROS/turtlebot/tp_turtle_crosio_damasceno_ws/RosTurtleBot/damasceno_crosio_ws/install
+
+Name: collision
+Description: Description of collision
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
