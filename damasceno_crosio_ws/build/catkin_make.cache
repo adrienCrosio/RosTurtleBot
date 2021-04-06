@@ -1,0 +1,2 @@
+kobuki_msgs
+-DCATKIN_DEVEL_PREFIX=/home/cpe_student/Bureau/damasceno_crosio_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cpe_student/Bureau/damasceno_crosio_ws/install -G Unix Makefiles
